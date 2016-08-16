@@ -27,7 +27,7 @@ exports.bind = function(el, selector, type, fn, capture){
   if (forceCaptureEvents.indexOf(type) !== -1) capture = true;
 
   return event.bind(el, type, function(e){
-    var target = e.target || e.srcElement;
+    var target = e.target.correspondingUseElement || e.target || e.srcElement;
     e.delegateTarget = closest(target, selector, true, el);
     if (e.delegateTarget) fn.call(el, e);
   }, capture);

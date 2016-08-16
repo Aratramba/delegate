@@ -49,3 +49,14 @@ test('Blur and Focus tests', function () {
   });
 });
 
+
+test('SVG use tag test', function () {
+  var button = document.querySelector('.svg-use-test');
+
+  test('it binds to the direct svg dom, not the shadow dom of the use tag (IE)', function () {
+    delegate.bind(button, 'svg', 'click', function (e) {
+      console.log("Clicked", e.target);
+    });
+  });
+});
+

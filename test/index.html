@@ -35,6 +35,18 @@
       <li class='blur'>This triggers on blur: <input placeholder='blur me'></li>
     </ul>
 
+    <svg hidden style="display: none;">
+      <defs>
+        <circle id="Circle" style="fill: red" r="10"/>
+      </defs>
+    </svg>
+
+    <button class="svg-use-test">
+      <svg width="100" height="100">
+        <use x="10" y="10" xlink:href="#Circle" /> 
+      </svg>
+    </button>
+
     <script src="./test.bundle.js"></script>
   </body>
 </html>
